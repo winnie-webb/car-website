@@ -20,6 +20,7 @@ html {
 }
 body {
   font-size: 1.6rem;
+  height: 130vh;
 }
 /* Header Styling */
 header {
@@ -31,28 +32,47 @@ header {
     ),
     url("./img/hero-image3.jpg");
   height: 100vh;
-  background-position: left;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
+}
+.header__burger {
+  position: absolute;
+  top: 3rem;
+  right: 5rem;
+  cursor: pointer;
+}
+.header__burgerStroke {
+  display: block;
+  width: 5rem;
+  height: 0.5rem;
+  background-color: #fff;
+  margin: 1rem;
 }
 .header__navLinks {
   display: flex;
   justify-content: space-around;
   padding-top: 5rem;
+  display: none;
 }
+
 li {
   list-style: none;
   cursor: pointer;
   color: #fff;
+  padding: 0 4rem;
 }
 
-.header__logo img {
+.header__logo {
   width: 30rem;
   height: 30rem;
   position: absolute;
   top: -9rem;
   left: 5rem;
+}
+#checkout-cars {
+  margin-left: auto;
 }
 .header__contentWrapper {
   position: absolute;
@@ -99,7 +119,33 @@ li {
 /* Header Media Queries */
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+
+@media (max-width: 420px) {
+  .header__contentWrapper {
+    width: 20rem !important;
+  }
+  .header__content {
+    font-size: 2.5rem !important;
+    line-height: 3rem !important;
+  }
+  .header__buttonsWrapper {
+    flex-direction: column;
+  }
+  .header__button {
+    margin: 0.7rem;
+  }
+  .header__logo {
+    width: 20rem;
+    height: 20rem;
+    top: -4rem;
+    left: -1rem !important;
+  }
+  .header__burger {
+    right: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
   .header__contentWrapper {
     width: 35rem;
   }
@@ -114,7 +160,7 @@ li {
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media (min-width: 600px) {
   .header__content {
     font-size: 5rem;
     line-height: 6rem;
@@ -122,7 +168,7 @@ li {
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .header__content {
     font-size: 6rem;
     line-height: 7rem;
@@ -130,9 +176,15 @@ li {
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+@media (min-width: 992px) {
+  .header__burger {
+    display: none;
+  }
+  .header__navLinks {
+    display: flex;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@media (min-width: 1200px) {
 }
