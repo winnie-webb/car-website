@@ -1,7 +1,12 @@
+/* Variables */
 :root {
-  --header-shop-btn-color: #e67e22;
-  --header-browse-btn-color: #34495e;
+  --header-shop-btn-color: rgb(230, 126, 34);
+  --header-browse-btn-color: rgb(52, 73, 94);
+  --header-shop-btn-color-hovered: rgba(230, 125, 34, 0.9);
+  --header-browse-btn-color-hovered: rgba(52, 73, 94, 0.9);
 }
+
+/* Basic Setup */
 *,
 ::before,
 ::after {
@@ -16,6 +21,7 @@ html {
 body {
   font-size: 1.6rem;
 }
+/* Header Styling */
 header {
   position: relative;
   background-image: linear-gradient(
@@ -39,6 +45,14 @@ li {
   list-style: none;
   cursor: pointer;
   color: #fff;
+}
+
+.header__logo img {
+  width: 30rem;
+  height: 30rem;
+  position: absolute;
+  top: -9rem;
+  left: 5rem;
 }
 .header__contentWrapper {
   position: absolute;
@@ -66,6 +80,7 @@ li {
   text-align: center;
   cursor: pointer;
   margin: 0 1rem;
+  transition: background-color 400ms;
 }
 .btn-shop {
   background-color: var(--header-shop-btn-color);
@@ -73,4 +88,51 @@ li {
 
 .btn-browse-car {
   background-color: var(--header-browse-btn-color);
+}
+.btn-shop:hover {
+  background-color: var(--header-shop-btn-color-hovered);
+}
+.btn-browse-car:hover {
+  background-color: var(--header-browse-btn-color-hovered);
+}
+
+/* Header Media Queries */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .header__contentWrapper {
+    width: 35rem;
+  }
+  .header__content {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+  .header__button {
+    width: 15rem;
+    padding: 0.7rem;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .header__content {
+    font-size: 5rem;
+    line-height: 6rem;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .header__content {
+    font-size: 6rem;
+    line-height: 7rem;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }
