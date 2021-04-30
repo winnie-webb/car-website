@@ -66,7 +66,7 @@ function renderShopProducts(json) {
 
     // Wrapper
     const productLink = document.createElement("a");
-    productLink.href = `/product.html?id=${product.productId}`;
+    productLink.href = `./product.html?id=${product.productId}`;
     //
 
     // Wrapper

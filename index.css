@@ -417,8 +417,8 @@ li {
   text-align: center;
 }
 .footer__warning {
-  width: 40%;
   margin: 4rem auto;
+  width: 45%;
   color: #ecf0f1;
 }
 @media (max-width: 600px) {
