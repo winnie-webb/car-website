@@ -234,6 +234,11 @@ li {
   font-size: 3rem;
   margin: 3rem;
 }
+.shop__productWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(40rem, 100%);
+}
 .shop__product {
   position: relative;
   cursor: pointer;
@@ -250,12 +255,7 @@ li {
 .shop__product img:hover {
   transform: scale(1.2);
 }
-.shop__productWrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(40rem, 100%);
-  gap: 2rem;
-}
+
 .util-product-content {
   position: absolute;
   top: 3rem;
@@ -285,4 +285,14 @@ li {
   color: #000;
   width: 20rem;
   margin: 0 auto;
+}
+@media (max-width: 600px) {
+  .shop__productWrapper {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 1200px) {
+  .shop__productWrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
