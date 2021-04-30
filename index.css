@@ -269,3 +269,17 @@ li {
   display: block;
   padding: 1rem;
 }
+.shop__product__buttonWrapper {
+  position: absolute;
+  width: 100%;
+  bottom: 2rem;
+}
+.shop__product__button {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #ecf0f1;
+  color: #000;
+  width: 20rem;
+  margin: 0 auto;
+}
