@@ -4,6 +4,7 @@
   --header-browse-btn-color: rgb(52, 73, 94);
   --header-shop-btn-color-hovered: rgba(230, 125, 34, 0.9);
   --header-browse-btn-color-hovered: rgba(52, 73, 94, 0.9);
+  --shop-linear-gradient: to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6);
 }
 
 /* Basic Setup */
@@ -17,10 +18,11 @@
 html {
   font-family: "Lato", sans-serif;
   font-size: 10px;
+  overflow-x: hidden;
 }
 body {
   font-size: 1.6rem;
-  height: 130vh;
+  height: 300vh;
 }
 /* Header Styling */
 header {
@@ -226,4 +228,46 @@ li {
       ),
       url("./img/hero-image-opt.jpg");
   }
+}
+
+.shop__heading {
+  font-size: 3rem;
+  margin: 3rem;
+}
+.shop__product {
+  position: relative;
+  cursor: pointer;
+  object-fit: cover;
+  overflow: hidden;
+  color: #ecf0f1;
+}
+.shop__product img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(70%);
+}
+.shop__product-2 img {
+  transform: scale(1.2);
+}
+.shop__productWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(40rem, 100%);
+  gap: 2rem;
+}
+.util-product-content {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+}
+.shop__product__name {
+  text-transform: capitalize;
+  font-size: 3rem;
+}
+
+.shop__product__price {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+  padding: 1rem;
 }
