@@ -3,31 +3,31 @@ const shop = document.querySelector(".shop__productWrapper");
 var json = [
   {
     productId: 1,
-    imgSrc: "./img/max-verstappen.jpg",
+    imgSrc: "./img/max-verstappen-opt.jpg",
     productName: "max verstappen",
     price: "$30,000",
   },
   {
     productId: 2,
-    imgSrc: "./img/audi.jpg",
+    imgSrc: "./img/audi-opt.jpg",
     productName: "audi rs7 matte",
     price: "$42,400",
   },
   {
     productId: 3,
-    imgSrc: "./img/bmw.jpg",
+    imgSrc: "./img/bmw-opt.jpg",
     productName: "bmw",
     price: "$39,305",
   },
   {
     productId: 4,
-    imgSrc: "./img/porsche.jpg",
+    imgSrc: "./img/porsche-opt.jpg",
     productName: "porshe taycan",
     price: "$35,000",
   },
   {
     productId: 5,
-    imgSrc: "./img/max-verstappen.jpg",
+    imgSrc: "./img/max-verstappen-opt.jpg",
     productName: "max verstappen",
     price: "$50,000",
   },

@@ -245,8 +245,11 @@ li {
   width: 100%;
   height: 100%;
   filter: brightness(70%);
+  transition: transform 0.4s;
 }
-
+.shop__product img:hover {
+  transform: scale(1.2);
+}
 .shop__productWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -278,7 +281,7 @@ li {
   text-align: center;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: #ecf0f1;
+  background-color: var(--header-shop-btn-color);
   color: #000;
   width: 20rem;
   margin: 0 auto;
