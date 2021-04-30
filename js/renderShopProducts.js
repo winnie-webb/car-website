@@ -4,37 +4,37 @@ var json = [
   {
     productId: 1,
     imgSrc: "./img/max-verstappen-opt.jpg",
-    productName: "max verstappen",
+    productName: "model v",
     price: "$30,000",
   },
   {
     productId: 2,
     imgSrc: "./img/audi-opt.jpg",
-    productName: "audi rs7 matte",
+    productName: "model t",
     price: "$42,400",
   },
   {
     productId: 3,
     imgSrc: "./img/bmw-opt.jpg",
-    productName: "bmw",
+    productName: "model WC",
     price: "$39,305",
   },
   {
     productId: 4,
     imgSrc: "./img/porsche-opt.jpg",
-    productName: "porshe taycan",
+    productName: "taycan 12",
     price: "$35,000",
   },
   {
     productId: 5,
-    imgSrc: "./img/max-verstappen-opt.jpg",
-    productName: "max verstappen",
+    imgSrc: "./img/new.jpg",
+    productName: "model supra",
     price: "$50,000",
   },
   {
     productId: 6,
     imgSrc: "./img/hero-image-opt.jpg",
-    productName: "ferari",
+    productName: "WC forge",
     price: "$41,500",
   },
 ];
@@ -75,7 +75,7 @@ function renderShopProducts(json) {
     //
 
     const buttonLink = document.createElement("div");
-    buttonLink.textContent = "View";
+    buttonLink.textContent = "Purchase";
     buttonLink.className = "shop__product__button";
 
     shop.append(figure);

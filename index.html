@@ -40,27 +40,28 @@
         <section class="shop__productWrapper">
         </section>
         </article>
-        <article>
-            <form name="contact" method="POST" data-netlify="true">
-                <p>
-                  <label>Your Name: <input type="text" name="name" /></label>   
-                </p>
-                <p>
-                  <label>Your Email: <input type="email" name="email" /></label>
-                </p>
-                <p>
-                  <label>Your Role: <select name="role[]" multiple>
-                    <option value="leader">Leader</option>
-                    <option value="follower">Follower</option>
-                  </select></label>
-                </p>
-                <p>
-                  <label>Message: <textarea name="message"></textarea></label>
-                </p>
-                <p>
-                  <button type="submit">Send</button>
-                </p>
+
+        <article class="contact">
+            <div class="contact__formWrapper">
+            <h2>Get in touch</h2>
+            <form class="form" name="contact" method="POST" data-netlify="true">
+                <div class="form__inputWrapper">
+                    <label>Full Name</label>
+                    <input required type="text" name="name" class="form__input"/>
+                </div> 
+                <div class="form__inputWrapper">
+                    <label>Email</label>
+                    <input required type="email" name="email" class="form__input"/>
+                </div> 
+                <div class="form__inputWrapper">
+                    <label>Message</label>
+                    <textarea required name="message" class="form__input form__inputMessage"></textarea>
+                </div> 
+                <div class="form__submitWrapper">
+                <input class="form__submit" type="submit"/>
+                </div>
               </form>
+            </div>
         </article>
     </main>
 </body>
