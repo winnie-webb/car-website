@@ -64,10 +64,27 @@ function renderShopProducts(json) {
     priceSpan.textContent = `From ${product.price}`;
     priceSpan.className = "shop__product__price";
 
+    // Wrapper
+    const productLink = document.createElement("a");
+    productLink.href = `/product.html?id=${product.productId}`;
+    //
+
+    // Wrapper
+    const buttonLinkWrapper = document.createElement("div");
+    buttonLinkWrapper.className = "shop__product__buttonWrapper";
+    //
+
+    const buttonLink = document.createElement("div");
+    buttonLink.textContent = "View";
+    buttonLink.className = "shop__product__button";
+
     shop.append(figure);
     figure.append(img);
     figure.append(nameAndPriceWrapper);
+    figure.append(productLink);
     nameAndPriceWrapper.append(nameSpan);
     nameAndPriceWrapper.append(priceSpan);
+    productLink.append(buttonLinkWrapper);
+    buttonLinkWrapper.append(buttonLink);
   });
 }
