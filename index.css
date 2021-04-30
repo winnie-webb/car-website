@@ -22,7 +22,6 @@ html {
 }
 body {
   font-size: 1.6rem;
-  height: 400vh;
 }
 /* Header Styling */
 header {
@@ -385,5 +384,46 @@ li {
   }
   .form__submitWrapper {
     width: 90%;
+  }
+}
+.footer {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 3rem;
+}
+
+.footer__navLinks {
+  display: flex;
+  font-size: 2.5rem;
+  justify-content: center;
+  padding: 2rem;
+}
+.footer__navLinks li {
+  border: 1px solid;
+  width: 30rem;
+  margin: 1rem;
+  padding: 2rem;
+  background: linear-gradient(to right, white 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.5s;
+}
+.footer__navLinks li:hover {
+  background-position: left bottom;
+  color: grey;
+}
+.footer__copyright {
+  font-size: 2.5rem;
+  text-align: center;
+}
+.footer__warning {
+  width: 40%;
+  margin: 4rem auto;
+  color: #ecf0f1;
+}
+@media (max-width: 600px) {
+  .footer__navLinks {
+    flex-direction: column;
+    align-items: center;
   }
 }
