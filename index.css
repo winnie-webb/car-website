@@ -27,21 +27,50 @@ header {
   position: relative;
   background-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.7),
       rgba(0, 0, 0, 0.5)
     ),
     url("./img/hero-image3.jpg");
   height: 100vh;
-  background-position: top;
+  background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
+}
+.burger-menu-toggled {
+  flex-direction: column;
+  width: 30rem;
+  height: 100%;
+  display: flex !important;
+  background-color: #fff;
+  padding: 2rem;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+.burger-menu-toggled li {
+  color: gray;
+}
+.burger-toggled .header__burgerStroke {
+  background-color: gray;
+}
+.burger-toggled .header__burgerStroke:nth-child(1) {
+  transform: translateY(1.1rem) rotate(40deg);
+}
+.burger-toggled .header__burgerStroke:nth-child(2) {
+  transform: translateX(-4rem);
+  opacity: 0;
+}
+.burger-toggled .header__burgerStroke:nth-child(3) {
+  transform: translateY(-1.9rem) rotate(-43deg);
 }
 .header__burger {
   position: absolute;
   top: 3rem;
   right: 5rem;
   cursor: pointer;
+  z-index: 3;
 }
 .header__burgerStroke {
   display: block;
@@ -49,12 +78,13 @@ header {
   height: 0.5rem;
   background-color: #fff;
   margin: 1rem;
+  transition: transform 0.4s, opacity 0.4s;
+  border-radius: 0.5rem;
 }
 .header__navLinks {
-  display: flex;
+  display: none;
   justify-content: space-around;
   padding-top: 5rem;
-  display: none;
 }
 
 li {
@@ -71,9 +101,7 @@ li {
   top: -9rem;
   left: 5rem;
 }
-#checkout-cars {
-  margin-left: auto;
-}
+
 .header__contentWrapper {
   position: absolute;
   left: 5rem;
@@ -183,8 +211,19 @@ li {
   .header__navLinks {
     display: flex;
   }
+  #shop-link {
+    margin-left: auto;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  header {
+    background-image: linear-gradient(
+        100deg,
+        rgba(0, 0, 0, 0.7) 50%,
+        rgba(0, 0, 0, 0.5) 50%
+      ),
+      url("./img/hero-image-opt.jpg");
+  }
 }
