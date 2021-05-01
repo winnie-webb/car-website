@@ -42,7 +42,7 @@ const scrollToComponent = () => {
   const locations = document.querySelector("iframe");
 
   const shopLinks = document.querySelectorAll(".shop-scroll");
-  const locationLinks = document.querySelectorAll(".locations-scroll");
+  const locationLinks = document.querySelectorAll(".aboutus-scroll");
   const contactLinks = document.querySelectorAll(".contact-scroll");
 
   function scrollToSection(initiators, sectionToScroll) {
@@ -58,3 +58,18 @@ const scrollToComponent = () => {
   scrollToSection(contactLinks, contact);
 };
 scrollToComponent();
+
+const lazyLoadMap = () => {
+  const map = document.querySelector("iframe[data-src]");
+  const mapObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const mapSrc = entry.target.getAttribute("data-src");
+      entry.target.src = mapSrc;
+      observer.unobserve(entry.target);
+      console.log(map);
+    });
+  });
+  mapObserver.observe(map);
+};
+lazyLoadMap();
