@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="./img/logo.png"/>
+    <link rel="icon" type="image/png" href="./img/logo.png" />
 
     <link rel="stylesheet" href="./index.css">
     <title>Winston Cars</title>
     <script defer src="./js/burger-toggle.js"></script>
     <script defer src="./js/renderShopProducts.js"></script>
+    <script defer src="js/scrollIntoView.js"></script>
 </head>
+
 <body>
     <header>
         <div class="header__burger">
@@ -20,11 +23,11 @@
             <span class="header__burgerStroke"></span>
             <span class="header__burgerStroke"></span>
         </div>
-        <img class="header__logo" src="./img/logo.png"/>
+        <img class="header__logo" src="./img/logo.png" />
         <ul class="header__navLinks">
-            <li id="shop-link">Shop</li>
-            <li id="checkout-cars">Locations</li>
-            <li id="contact-us">Contact Us</li>
+            <li class="shop-scroll" id="shop-link">Shop</li>
+            <li class="locations-scroll" id="locations-scroll">Locations</li>
+            <li class="contact-scroll" id="contact-us">Contact Us</li>
         </ul>
         <div class="header__contentWrapper">
             <p class="header__content">Start driving the most luxurious cars at the lowest prices.</p>
@@ -36,121 +39,125 @@
     </header>
     <main>
         <article class="shop">
-            
-        <h1 class="shop__heading">Best Deals</h1>
-        <section class="shop__productWrapper">
-            <figure class="shop__product shop__product-1">
-                <img data-src="./img/modelv-opt.jpg"/>
-                <div class="util-product-content">
-                <span class="shop__product__name">model v</span>
-                <span class="shop__product__price">From $30,000</span>
-            </div>
-            <a href="./product.html?id=1">
-                <div class="shop__product__buttonWrapper">
-                    <div class="shop__product__button">Purchase</div>
-                </div>
-            </a>
-            </figure>
-            <figure class="shop__product shop__product-2">
-                <img data-src="./img/modelt-opt.jpg"/>
-                <div class="util-product-content">
-                <span class="shop__product__name">model t</span>
-                <span class="shop__product__price">From $42,400</span>
-                </div>
-                <a href="./product.html?id=2">
-                    <div class="shop__product__buttonWrapper">
-                        <div class="shop__product__button">Purchase</div>
+
+            <h1 class="shop__heading">Best Deals</h1>
+            <section class="shop__productWrapper">
+                <figure class="shop__product shop__product-1">
+                    <img data-src="./img/modelv-opt.jpg" />
+                    <div class="util-product-content">
+                        <span class="shop__product__name">model v</span>
+                        <span class="shop__product__price">From $30,000</span>
                     </div>
-                </a>
-            </figure>
-            <figure class="shop__product shop__product-3">
-                <img data-src="./img/modelwc-opt.jpg"/>
-                <div class="util-product-content">
-                <span class="shop__product__name">model WC</span>
-                <span class="shop__product__price">From $39,305</span>
-                </div>
-                <a href="./product.html?id=3">
-                    <div class="shop__product__buttonWrapper">
-                        <div class="shop__product__button">Purchase</div>
+                    <a href="./product.html?id=1">
+                        <div class="shop__product__buttonWrapper">
+                            <div class="shop__product__button">Purchase</div>
+                        </div>
+                    </a>
+                </figure>
+                <figure class="shop__product shop__product-2">
+                    <img data-src="./img/modelt-opt.jpg" />
+                    <div class="util-product-content">
+                        <span class="shop__product__name">model t</span>
+                        <span class="shop__product__price">From $42,400</span>
                     </div>
-                </a>
-            </figure>
-            <figure class="shop__product shop__product-4">
-                <img data-src="./img/taycan12-opt.jpg"/>
-                <div class="util-product-content">
-                <span class="shop__product__name">porsche</span>
-                <span class="shop__product__price">From $35,000</span>
-                </div>
-                <a href="./product.html?id=4">
-                    <div class="shop__product__buttonWrapper">
-                        <div class="shop__product__button">Purchase</div>
+                    <a href="./product.html?id=2">
+                        <div class="shop__product__buttonWrapper">
+                            <div class="shop__product__button">Purchase</div>
+                        </div>
+                    </a>
+                </figure>
+                <figure class="shop__product shop__product-3">
+                    <img data-src="./img/modelwc-opt.jpg" />
+                    <div class="util-product-content">
+                        <span class="shop__product__name">model WC</span>
+                        <span class="shop__product__price">From $39,305</span>
                     </div>
-                </a>
-            </figure>
-            <figure class="shop__product shop__product-5">
-                <img data-src="./img/modelsupra-opt.jpg"/>
-                <div class="util-product-content">
-                <span class="shop__product__name">model supra</span>
-                <span class="shop__product__price">From $ 50,000</span>
-                </div>
-                <a href="./product.html?id=5">
-                    <div class="shop__product__buttonWrapper">
-                        <div class="shop__product__button">Purchase</div>
+                    <a href="./product.html?id=3">
+                        <div class="shop__product__buttonWrapper">
+                            <div class="shop__product__button">Purchase</div>
+                        </div>
+                    </a>
+                </figure>
+                <figure class="shop__product shop__product-4">
+                    <img data-src="./img/taycan12-opt.jpg" />
+                    <div class="util-product-content">
+                        <span class="shop__product__name">porsche</span>
+                        <span class="shop__product__price">From $35,000</span>
                     </div>
-                </a>
-            </figure>
-            <figure class="shop__product shop__product-6">
-                <img data-src="./img/hero-image-opt.jpg"/>
-                <div class="util-product-content">
-                <span class="shop__product__name">WC forge</span>
-                <span class="shop__product__price">From $41,500</span>
-                </div>
-                <a href="./product.html?id=6">
-                    <div class="shop__product__buttonWrapper">
-                        <div class="shop__product__button">Purchase</div>
+                    <a href="./product.html?id=4">
+                        <div class="shop__product__buttonWrapper">
+                            <div class="shop__product__button">Purchase</div>
+                        </div>
+                    </a>
+                </figure>
+                <figure class="shop__product shop__product-5">
+                    <img data-src="./img/modelsupra-opt.jpg" />
+                    <div class="util-product-content">
+                        <span class="shop__product__name">model supra</span>
+                        <span class="shop__product__price">From $ 50,000</span>
                     </div>
-                </a>
-            </figure>
-        </section>
+                    <a href="./product.html?id=5">
+                        <div class="shop__product__buttonWrapper">
+                            <div class="shop__product__button">Purchase</div>
+                        </div>
+                    </a>
+                </figure>
+                <figure class="shop__product shop__product-6">
+                    <img data-src="./img/hero-image-opt.jpg" />
+                    <div class="util-product-content">
+                        <span class="shop__product__name">WC forge</span>
+                        <span class="shop__product__price">From $41,500</span>
+                    </div>
+                    <a href="./product.html?id=6">
+                        <div class="shop__product__buttonWrapper">
+                            <div class="shop__product__button">Purchase</div>
+                        </div>
+                    </a>
+                </figure>
+            </section>
         </article>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15139.304764738532!2d-77.9118247!3d18.4461991!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7a4183c379552c5d!2sJamaica%20Eternal%20Tours%20and%20Transportation!5e0!3m2!1sen!2sjm!4v1619812689395!5m2!1sen!2sjm" width="100%" height="700" style="border:0; margin-top: 6rem;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988461.900613737!2d-113.10424845776956!3d14.588856861822245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f0b58c0f7680811%3A0x8dace0c7060b2570!2sCentral%20America!5e0!3m2!1sen!2sjm!4v1619848620723!5m2!1sen!2sjm"
+            width="100%" height="700" style="border:0;margin-top: 5rem;" allowfullscreen="" loading="lazy"></iframe>
+        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15139.304764738532!2d-77.9118247!3d18.4461991!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7a4183c379552c5d!2sJamaica%20Eternal%20Tours%20and%20Transportation!5e0!3m2!1sen!2sjm!4v1619812689395!5m2!1sen!2sjm" width="100%" height="700" style="border:0; margin-top: 6rem;" allowfullscreen="" loading="lazy"></iframe> -->
 
         <article class="contact">
             <div class="contact__formWrapper">
-            <h2>Get in touch</h2>
-            <form class="form" name="contact" method="POST" data-netlify="true">
-                <div class="form__inputWrapper">
-                    <label>Full Name</label>
-                    <input required type="text" name="name" class="form__input"/>
-                </div> 
-                <div class="form__inputWrapper">
-                    <label>Email</label>
-                    <input required type="email" name="email" class="form__input"/>
-                </div> 
-                <div class="form__inputWrapper">
-                    <label>Message</label>
-                    <textarea required name="message" class="form__input form__inputMessage"></textarea>
-                </div> 
-                <div class="form__submitWrapper">
-                <input class="form__submit" type="submit"/>
-                </div>
-              </form>
+                <h2>Get in touch</h2>
+                <form class="form" name="contact" method="POST" data-netlify="true">
+                    <div class="form__inputWrapper">
+                        <label>Full Name</label>
+                        <input required type="text" name="name" class="form__input" />
+                    </div>
+                    <div class="form__inputWrapper">
+                        <label>Email</label>
+                        <input required type="email" name="email" class="form__input" />
+                    </div>
+                    <div class="form__inputWrapper">
+                        <label>Message</label>
+                        <textarea required name="message" class="form__input form__inputMessage"></textarea>
+                    </div>
+                    <div class="form__submitWrapper">
+                        <input class="form__submit" type="submit" />
+                    </div>
+                </form>
             </div>
         </article>
     </main>
     <footer class="footer">
         <article>
-        <ul class="footer__navLinks">
-            <li id="shop-link-footer">Shop  </li>
-            <li id="checkout-cars-footer">Locations </li>
-            <li id="contact-us-footer">Contact Us </li>
-        </ul>
-        <p class="footer__copyright">&copy; Winston Cars Central America 2021, Inc</p>
-        <p class="footer__warning">
-        * Using this website for as a template for <b>commercial</b> is forbidden. If you choose to ignore 
-        this warning we will have no choice but sue for copyright.
-        </p>
-    </article>
+            <ul class="footer__navLinks">
+                <li class="shop-scroll" id="shop-link-footer">Shop </li>
+                <li class="locations-scroll" id="checkout-cars-footer">Locations </li>
+                <li class="contact-scroll" id="contact-us-footer">Contact Us </li>
+            </ul>
+            <p class="footer__copyright">&copy; Winston Cars Central America 2021, Inc</p>
+            <p class="footer__warning">
+                * Using this website for as a template for <b>commercial</b> is forbidden. If you choose to ignore
+                this warning we will have no choice but sue for copyright.
+            </p>
+        </article>
     </footer>
 </body>
+
 </html>
