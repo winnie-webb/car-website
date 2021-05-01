@@ -1,14 +1,20 @@
 const lazyLoadImages = () => {
-  const images = document.querySelectorAll("[data-src]");
+  const images = document.querySelectorAll("img[data-src]");
   console.log(images);
+
+  function preloadImage(img) {
+    const src = img.getAttribute("data-src");
+    if (!src) console.log(img);
+    img.src = src;
+  }
+
   const imgObserver = new IntersectionObserver((entries, imgObserver) => {
     entries.forEach((entry) => {
       console.log(entry.target);
       if (!entry.isIntersecting) return;
       console.log(entry.target);
-      const src = entry.target.getAttribute("data-src");
-      entry.target.src = src;
-      imgObserver.unobserve(entry);
+      preloadImage(entry.target);
+      imgObserver.unobserve(entry.target);
     });
   });
 
