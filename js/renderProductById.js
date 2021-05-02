@@ -1,31 +1,31 @@
 var json = [
   {
     productId: 1,
-    imgSrc: "./img/max-verstappen-opt.jpg",
+    imgSrc: "./img/modelv-opt.jpg",
     productName: "model v",
     price: "$30,000",
   },
   {
     productId: 2,
-    imgSrc: "./img/audi-opt.jpg",
+    imgSrc: "./img/modelt-opt.jpg",
     productName: "model t",
     price: "$42,400",
   },
   {
     productId: 3,
-    imgSrc: "./img/bmw-opt.jpg",
+    imgSrc: "./img/modelwc-opt.jpg",
     productName: "model WC",
     price: "$39,305",
   },
   {
     productId: 4,
-    imgSrc: "./img/porsche-opt.jpg",
+    imgSrc: "./img/taycan12-opt.jpg",
     productName: "taycan 12",
     price: "$35,000",
   },
   {
     productId: 5,
-    imgSrc: "./img/new.jpg",
+    imgSrc: "./img/modelsupra-opt.jpg",
     productName: "model supra",
     price: "$50,000",
   },
@@ -37,19 +37,19 @@ var json = [
   },
 ];
 
-const wrapper = document.querySelector(".product");
+const header = document.querySelector("header");
 const urlParams = new URLSearchParams(window.location.search);
 const id = Number(urlParams.get("id"));
-
-let productToRender;
+let headerImage;
 json.forEach((product) => {
-  if (product.productId !== id) return;
-  productToRender = product;
+  if (product.productId === id) {
+    headerImage = product.imgSrc;
+  }
 });
-
-const { imgSrc, productName, price } = productToRender;
-
-const img = document.createElement("img");
-img.src = imgSrc;
-
-wrapper.append(img);
+header.style.backgroundImage = `
+ linear-gradient(
+  to right,
+  rgba(0, 0, 0, 0.7),
+  rgba(0, 0, 0, 0.5)
+),
+url(${headerImage})`;

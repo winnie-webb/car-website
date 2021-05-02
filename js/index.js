@@ -12,26 +12,11 @@ burgerToggle();
 
 const lazyLoadImages = () => {
   const images = document.querySelectorAll("img[data-src]");
-  console.log(images);
-
-  function preloadImage(img) {
-    const src = img.getAttribute("data-src");
-    if (!src) console.log(img);
-    img.src = src;
-  }
-
-  const imgObserver = new IntersectionObserver((entries, imgObserver) => {
-    entries.forEach((entry) => {
-      console.log(entry.target);
-      if (!entry.isIntersecting) return;
-      console.log(entry.target);
-      preloadImage(entry.target);
-      imgObserver.unobserve(entry.target);
+  window.addEventListener("load", () => {
+    images.forEach((image) => {
+      const src = image.getAttribute("data-src");
+      image.src = src;
     });
-  });
-
-  images.forEach((image) => {
-    imgObserver.observe(image);
   });
 };
 lazyLoadImages();
@@ -39,10 +24,10 @@ lazyLoadImages();
 const scrollToComponent = () => {
   const shop = document.querySelector(".shop");
   const contact = document.querySelector(".contact");
-  const locations = document.querySelector("iframe");
+  const aboutus = document.querySelector(".aboutus");
 
   const shopLinks = document.querySelectorAll(".shop-scroll");
-  const locationLinks = document.querySelectorAll(".aboutus-scroll");
+  const aboutusLinks = document.querySelectorAll(".aboutus-scroll");
   const contactLinks = document.querySelectorAll(".contact-scroll");
 
   function scrollToSection(initiators, sectionToScroll) {
@@ -54,22 +39,16 @@ const scrollToComponent = () => {
   }
 
   scrollToSection(shopLinks, shop);
-  scrollToSection(locationLinks, locations);
+  scrollToSection(aboutusLinks, aboutus);
   scrollToSection(contactLinks, contact);
 };
 scrollToComponent();
 
 const lazyLoadMap = () => {
   const map = document.querySelector("iframe[data-src]");
-  const mapObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const mapSrc = entry.target.getAttribute("data-src");
-      entry.target.src = mapSrc;
-      observer.unobserve(entry.target);
-      console.log(map);
-    });
+  window.addEventListener("load", () => {
+    const src = map.getAttribute("data-src");
+    map.src = src;
   });
-  mapObserver.observe(map);
 };
 lazyLoadMap();
