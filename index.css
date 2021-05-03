@@ -456,3 +456,16 @@ li {
   box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.108);
   border-radius: 0.4rem;
 }
+@media (max-width: 900px) {
+  .util-article-style {
+    width: 100vw;
+  }
+}
+@media (max-width: 600px) {
+  .aboutus__contentWrapper {
+    width: 100%;
+  }
+  .aboutus__imageWrapper {
+    display: none;
+  }
+}

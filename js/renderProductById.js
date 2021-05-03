@@ -37,19 +37,16 @@ var json = [
   },
 ];
 
-const header = document.querySelector("header");
+const wrapper = document.querySelector(".product");
 const urlParams = new URLSearchParams(window.location.search);
 const id = Number(urlParams.get("id"));
-let headerImage;
+
+const img = document.createElement("img");
+
 json.forEach((product) => {
-  if (product.productId === id) {
-    headerImage = product.imgSrc;
-  }
+  if (!product.id === id) return;
+
+  img.src = product.imgSrc;
 });
-header.style.backgroundImage = `
- linear-gradient(
-  to right,
-  rgba(0, 0, 0, 0.7),
-  rgba(0, 0, 0, 0.5)
-),
-url(${headerImage})`;
+
+wrapper.append(img);
