@@ -10,17 +10,6 @@ const burgerToggle = () => {
 };
 burgerToggle();
 
-const lazyLoadImages = () => {
-  const images = document.querySelectorAll("img[data-src]");
-  window.addEventListener("load", () => {
-    images.forEach((image) => {
-      const src = image.getAttribute("data-src");
-      image.src = src;
-    });
-  });
-};
-lazyLoadImages();
-
 const scrollToComponent = () => {
   const shop = document.querySelector(".shop");
   const contact = document.querySelector(".contact");
@@ -44,11 +33,22 @@ const scrollToComponent = () => {
 };
 scrollToComponent();
 
-const lazyLoadMap = () => {
-  const map = document.querySelector("iframe[data-src]");
-  window.addEventListener("load", () => {
-    const src = map.getAttribute("data-src");
-    map.src = src;
+const lazyLoadImages = () => {
+  const images = document.querySelectorAll("[data-src]");
+
+  const addSrc = (element) => {
+    const src = element.getAttribute("data-src");
+    element.src = src;
+  };
+  const elementsObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      addSrc(entry.target);
+      observer.unobserve(entry.target);
+    });
+  });
+  images.forEach((element) => {
+    elementsObserver.observe(element);
   });
 };
-lazyLoadMap();
+lazyLoadImages();
