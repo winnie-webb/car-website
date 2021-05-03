@@ -31,7 +31,7 @@ header {
       rgba(0, 0, 0, 0.7),
       rgba(0, 0, 0, 0.5)
     ),
-    url("./img/hero-image-opt.jpg");
+    url("../img/hero-image-opt.jpg");
   height: 100vh;
   background-position: left;
   background-repeat: no-repeat;
@@ -225,7 +225,7 @@ li {
         rgba(0, 0, 0, 0.7) 50%,
         rgba(0, 0, 0, 0.5) 50%
       ),
-      url("./img/hero-image-opt.jpg");
+      url("../img/hero-image-opt.jpg");
   }
 }
 
@@ -328,7 +328,7 @@ li {
       rgba(0, 0, 0, 0.9) 50%,
       transparent 50%
     ),
-    url("./img/contact-bg-opt.jpg");
+    url("../img/contact-bg-opt.jpg");
   background-position: left;
   background-size: cover;
   background-repeat: no-repeat;
@@ -388,7 +388,7 @@ li {
         rgba(0, 0, 0, 0.9) 100%,
         transparent 0%
       ),
-      url("./img/contact-bg-opt.jpg");
+      url("../img/contact-bg-opt.jpg");
   }
   .contact__formWrapper {
     width: 100%;
