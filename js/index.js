@@ -33,22 +33,20 @@ const scrollToComponent = () => {
 };
 scrollToComponent();
 
-// const lazyLoadImages = () => {
-//   const images = document.querySelectorAll("[data-src]");
+const lazyLoadImages = () => {
+  const firstImg = document.querySelector("img[data-src]");
+  const allImages = document.querySelectorAll("img[data-src]");
+  const imgObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
 
-//   const addSrc = (element) => {
-//     const src = element.getAttribute("data-src");
-//     element.src = src;
-//   };
-//   const elementsObserver = new IntersectionObserver((entries, observer) => {
-//     entries.forEach((entry) => {
-//       if (!entry.isIntersecting) return;
-//       addSrc(entry.target);
-//       observer.unobserve(entry.target);
-//     });
-//   });
-//   images.forEach((element) => {
-//     elementsObserver.observe(element);
-//   });
-// };
-// lazyLoadImages();
+      allImages.forEach((img) => {
+        img.src = img.getAttribute("data-src");
+      });
+
+      observer.unobserve(entry.target);
+    });
+  });
+  imgObserver.observe(firstImg);
+};
+lazyLoadImages();
