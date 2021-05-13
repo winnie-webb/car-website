@@ -32,21 +32,3 @@ const scrollToComponent = () => {
   scrollToSection(contactLinks, contact);
 };
 scrollToComponent();
-
-const lazyLoadImages = () => {
-  const firstImg = document.querySelector("img[data-src]");
-  const allImages = document.querySelectorAll("img[data-src]");
-  const imgObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-
-      allImages.forEach((img) => {
-        img.src = img.getAttribute("data-src");
-      });
-
-      observer.unobserve(entry.target);
-    });
-  });
-  imgObserver.observe(firstImg);
-};
-lazyLoadImages();
